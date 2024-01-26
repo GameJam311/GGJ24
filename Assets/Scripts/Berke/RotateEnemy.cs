@@ -5,9 +5,10 @@ using UnityEngine;
 public class RotateEnemy : MonoBehaviour
 {
     public float rotationSpeed = 50f;
+    public float xRotation, yRotation;
 
     void Update()
     {
-        transform.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+        transform.Rotate(xRotation, yRotation, rotationSpeed * Time.deltaTime);
     }
 }
