@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Watch1 : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Watch1 : MonoBehaviour
     {
         startPos = transform.position;
         endPos = new Vector3(startPos.x + 20f, startPos.y, startPos.z);
+
+
     }
 
     void Update()
