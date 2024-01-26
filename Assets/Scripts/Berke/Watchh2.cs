@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Watchh2 : MonoBehaviour
 {
-    public GameObject spotlightObject; // Işığın bağlı olduğu GameObject'i bu alandan atayın
+    public GameObject spotlightObject; // Isik objesi
     private float activeTime = 4f;
     private float inactiveTime = 2f;
     private bool lightActive = true;
@@ -31,7 +31,7 @@ public class Watchh2 : MonoBehaviour
 
     void ToggleGameObject()
     {
-        // GameObject'in etkinlik durumunu tersine çevirin
+        // GameObjectin aktifligini tersine cevir
         spotlightObject.SetActive(!spotlightObject.activeSelf);
     }
 }

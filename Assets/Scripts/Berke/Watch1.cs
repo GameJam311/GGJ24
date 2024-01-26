@@ -5,7 +5,7 @@ using UnityEngine;
 public class Watch1 : MonoBehaviour
 {
 
-    public float speed = 5f; // Objenin hareket hýzý
+    public float speed = 5f;
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -23,7 +23,7 @@ public class Watch1 : MonoBehaviour
 
         if (transform.position == endPos)
         {
-            // Eðer hedefe ulaþýldýysa hedefi deðiþtir
+            // eger hedefe ulastiysa geri don
             Vector3 temp = endPos;
             endPos = startPos;
             startPos = temp;
