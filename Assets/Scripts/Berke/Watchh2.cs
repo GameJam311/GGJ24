@@ -6,31 +6,26 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class Watchh2 : MonoBehaviour
 {
     public GameObject spotlightObject; // Işığın bağlı olduğu GameObject'i bu alandan atayın
-
-    private float waitTime = 4f;
-    private float Timee = 0f;
+    private float activeTime = 4f;
+    private float inactiveTime = 2f;
     private bool lightActive = true;
+    private float timer = 0f;
 
     void Update()
     {
-        Timee += Time.deltaTime;
+        timer += Time.deltaTime;
 
-        if (Timee >= waitTime)
+        if (lightActive && timer >= activeTime)
         {
-            if (lightActive)
-            {
-                print("isik kapali");
-                ToggleGameObject();
-                lightActive = false;
-                Timee = 0f;
-            }
-            else
-            {
-                print("isik acik");
-                ToggleGameObject();
-                lightActive = true;
-                Timee = 0f;
-            }
+            ToggleGameObject();
+            lightActive = false;
+            timer = 0f;
+        }
+        else if (!lightActive && timer >= inactiveTime)
+        {
+            ToggleGameObject();
+            lightActive = true;
+            timer = 0f;
         }
     }
 
