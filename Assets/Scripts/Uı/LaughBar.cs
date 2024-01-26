@@ -12,7 +12,8 @@ public class LaughBar : MonoBehaviour
     float valueBarValue;//takip eden bar scale y degeri
     void Update()
     {
-        LaughBarControl();
+        LaughBorder();
+        LaughBarControl();       
     }
     void LaughBarControl()
     {
@@ -27,6 +28,19 @@ public class LaughBar : MonoBehaviour
         {
             //takip eden bar smooth sekilde yeni degerini alsin
             valueBar.transform.DOScaleY(laughLevel / 100, 1f);
+        }
+    }
+    void LaughBorder()
+    {
+        //100 den buyuk olmasini engelle
+        if (laughLevel >= 100f)
+        {
+            laughLevel = 100f;
+        }
+        //0 dan kucuk olmasini engelle
+        else if(laughLevel <= 0)
+        {
+            laughLevel = 0f;
         }
     }
 }
