@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 4338556364511880387}
   - component: {fileID: 238683836421441286}
   m_Layer: 0
-  m_Name: Enemy4
+  m_Name: Rotate Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

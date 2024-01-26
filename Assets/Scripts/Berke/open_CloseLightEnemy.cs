@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class Watchh2 : MonoBehaviour
+public class open_CloseLightEnemy : MonoBehaviour
 {
     public GameObject spotlightObject; // Isik objesi
     private float activeTime = 4f;
