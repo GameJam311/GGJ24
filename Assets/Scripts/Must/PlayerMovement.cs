@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     private bool isJumping;
+    private bool isClown = false;
 
     private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
@@ -68,6 +69,19 @@ public class PlayerMovement : MonoBehaviour
 
             coyoteTimeCounter = 0f;
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(isClown)
+            {
+                //kral ol
+                isClown = false;
+            }
+            else
+            {
+                //kutu ol
+                isClown = true;
+            }
+        }
         Flip();
     }
 
@@ -112,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Light"))
         {
-            Debug.Log("ýþýk deðdi");
+            //kahkahameter kur
         }
     }
 }
