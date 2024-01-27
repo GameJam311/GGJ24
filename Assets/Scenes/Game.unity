@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc88d5411c70ca48b022136d3f3c182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 2.5, z: -10}
   target: {fileID: 163800590}
 --- !u!114 &189421938
 MonoBehaviour:
@@ -38654,7 +38655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893127873893957942, guid: 7f7292aba2384b54aae85844bb60854b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.26
+      value: 28.73
       objectReference: {fileID: 0}
     - target: {fileID: 5893127873893957942, guid: 7f7292aba2384b54aae85844bb60854b, type: 3}
       propertyPath: m_LocalPosition.z
