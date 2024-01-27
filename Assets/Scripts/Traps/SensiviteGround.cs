@@ -7,11 +7,6 @@ public class SensiviteGround : MonoBehaviour
 {
     public Sprite normalSprite;
     public Sprite brokenSprite;
-    private void OnEnable()
-    {
-        //obje normal sprite ile respawn olsun
-        ChangeSprite(normalSprite);
-    }
     private void OnDisable()
     {
         //3 saniye sonra objeyi yeniden ac
@@ -26,6 +21,8 @@ public class SensiviteGround : MonoBehaviour
     {
         //objeyi yeniden ac
         this.gameObject.SetActive(true);
+        //obje normal sprite ile respawn olsun
+        ChangeSprite(normalSprite);
     }
     IEnumerator StartBreak()
     {
@@ -59,6 +56,14 @@ public class SensiviteGround : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             StartCoroutine(StartBreak());
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Player"))
+        {
+            StopCoroutine(StartBreak());
+            StartRespawn();
         }
     }
 }
