@@ -14,6 +14,7 @@ public class Buttons : MonoBehaviour
     }
     public void ChangeScene(string scene)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
     public void ButtonSound(AudioClip sound)

@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     AudioSource audioSource;
     private Animator animator;
     public AudioClip[] footSteps;
+    public AudioClip changeSound;
     public float footStepSpeed;
 
     public bool inLight = false;
@@ -87,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
+            audioSource.PlayOneShot(changeSound, 1f);
             if (isClown)
             {
                 animator.SetBool("clowning", true);

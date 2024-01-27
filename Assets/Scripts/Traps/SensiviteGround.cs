@@ -11,6 +11,7 @@ public class SensiviteGround : MonoBehaviour
 
     public Sprite normalSprite;
     public Sprite brokenSprite;
+    bool isStart = false;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -18,6 +19,7 @@ public class SensiviteGround : MonoBehaviour
     private void OnDisable()
     {
         //3 saniye sonra objeyi yeniden ac
+        isStart = false;
         Invoke("StartRespawn", 3f);
     }
     void ChangeSprite(Sprite sprite)
@@ -34,6 +36,7 @@ public class SensiviteGround : MonoBehaviour
     }
     IEnumerator StartBreak()
     {
+        isStart = true;
         audioSource.PlayOneShot(brokeSound, 1f);
         //10 kere sallanti komutu cagir
         for (int i = 0 ; i < 10 ; i++)
@@ -62,7 +65,7 @@ public class SensiviteGround : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //karakter platforma bastiginda kirilma baslasin
-        if (collision.gameObject.tag.Equals("Player"))
+        if (collision.gameObject.tag.Equals("Player") && !isStart)
         {
             StartCoroutine(StartBreak());           
         }

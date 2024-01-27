@@ -89,7 +89,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 64362
+  m_InstanceId: 58772
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -389,6 +389,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca4700c8422a4b1408e5706200da628b, type: 3}
   - {fileID: 8300000, guid: bc970deb618aba74c8c03691e8dd8631, type: 3}
   - {fileID: 8300000, guid: 0fa938126e66d804d81ed2616dcc2640, type: 3}
+  changeSound: {fileID: 8300000, guid: 525648d86e7f9ab44a7e78334fc0b36e, type: 3}
   footStepSpeed: 0.4
   inLight: 0
   inLightTime: 0
