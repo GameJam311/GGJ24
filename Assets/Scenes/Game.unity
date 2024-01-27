@@ -38640,6 +38640,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2012705811716595135, guid: 7f7292aba2384b54aae85844bb60854b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2991997416357068256, guid: 7f7292aba2384b54aae85844bb60854b, type: 3}
       propertyPath: m_Name
       value: Button
@@ -39010,6 +39014,10 @@ PrefabInstance:
     - target: {fileID: 1426188729043206806, guid: 3e7262cc410a994489bf4e5506f61da2, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.9999037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318118384645049709, guid: 3e7262cc410a994489bf4e5506f61da2, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 6884906754980967118, guid: 3e7262cc410a994489bf4e5506f61da2, type: 3}
       propertyPath: m_Name
@@ -81711,6 +81719,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2012705811716595135, guid: 7f7292aba2384b54aae85844bb60854b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2991997416357068256, guid: 7f7292aba2384b54aae85844bb60854b, type: 3}
       propertyPath: m_Name
       value: Button (1)

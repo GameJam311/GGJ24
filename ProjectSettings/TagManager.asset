@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovingPlatform
   - RotateTrap
+  - Light
   layers:
   - Default
   - TransparentFX

@@ -108,4 +108,11 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(footStepSpeed);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Light"))
+        {
+            Debug.Log("ýþýk deðdi");
+        }
+    }
 }
