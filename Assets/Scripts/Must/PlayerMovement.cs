@@ -21,12 +21,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    AudioSource audioSource;
+    public AudioClip[] footSteps;
+    public AudioClip land;
+    public float footStepSpeed;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        StartCoroutine(FootSteps());
+    }
+
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if (IsGrounded())
         {
+            audioSource.PlayOneShot(land, 1f);
             coyoteTimeCounter = coyoteTime;
         }
         else
@@ -86,5 +97,16 @@ public class PlayerMovement : MonoBehaviour
         isJumping = true;
         yield return new WaitForSeconds(0.4f);
         isJumping = false;
+    }
+    private IEnumerator FootSteps()
+    {
+        while (true)
+        {
+            if(IsGrounded() && !isJumping)
+            {
+                audioSource.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)], 1f);
+            }        
+            yield return new WaitForSeconds(footStepSpeed);
+        }
     }
 }

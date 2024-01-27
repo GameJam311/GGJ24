@@ -208,3 +208,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  footSteps:
+  - {fileID: 8300000, guid: 7927bb6b97200c84881eb4499808d9a7, type: 3}
+  - {fileID: 8300000, guid: 3a433e889078e9a49a6fbb35c4ff46f4, type: 3}
+  - {fileID: 8300000, guid: 2bb395ad4ff1d8848b2b639dfce21ed4, type: 3}
+  - {fileID: 8300000, guid: ca4700c8422a4b1408e5706200da628b, type: 3}
+  - {fileID: 8300000, guid: bc970deb618aba74c8c03691e8dd8631, type: 3}
+  - {fileID: 8300000, guid: 0fa938126e66d804d81ed2616dcc2640, type: 3}
+  land: {fileID: 8300000, guid: 83ec4846e7cfe7e46807c62ab65a22c6, type: 3}
+  footStepSpeed: 0.5
