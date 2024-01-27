@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Security.Cryptography;
 
 public class SensiviteGround : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class SensiviteGround : MonoBehaviour
         //10 kere sallanti komutu cagir
         for(int i = 0 ; i < 10 ; i++)
         {
-            transform.DOShakePosition(1f, 0.04f);
+            transform.DOShakePosition(1,0.04f);
         }
         
         //bekle
