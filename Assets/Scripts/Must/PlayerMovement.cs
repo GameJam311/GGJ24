@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform canbari;
+    [SerializeField] private GameObject puff;
 
     AudioSource audioSource;
     private Animator animator;
@@ -84,19 +85,21 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             coyoteTimeCounter = 0f;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (isClown)
             {
                 animator.SetBool("clowning", true);
                 amiCloawn = true;
                 isClown = false;
+                Instantiate(puff,transform.position,Quaternion.identity);
             }
             else
             {
                 animator.SetBool("clowning", false);
                 amiCloawn = false;
                 isClown = true;
+                Instantiate(puff, transform.position, Quaternion.identity);
             }
         }
         Flip();
@@ -117,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void LaughControl()
     {
-        if (inLight)
+        if (amiCloawn )
         {
             LaughBar.laughLevel += Time.deltaTime * 50;
         }

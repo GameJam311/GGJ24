@@ -89,7 +89,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 131942
+  m_InstanceId: 64362
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -381,6 +381,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   canbari: {fileID: 0}
+  puff: {fileID: 7888781885705256027, guid: 580777558e92ab64aa5b5dccbe4a4b2c, type: 3}
   footSteps:
   - {fileID: 8300000, guid: 7927bb6b97200c84881eb4499808d9a7, type: 3}
   - {fileID: 8300000, guid: 3a433e889078e9a49a6fbb35c4ff46f4, type: 3}
