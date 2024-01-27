@@ -101,12 +101,11 @@ public class PlayerMovement : MonoBehaviour
     {
         while (true)
         {
-            if (IsGrounded() && !isJumping && horizontal != 0)
+            if (IsGrounded() && horizontal != 0)
             {
-                audioSource.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)], 1f);
-
-                yield return new WaitForSeconds(footStepSpeed);
+                audioSource.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)], 1f);             
             }
+            yield return new WaitForSeconds(footStepSpeed);
         }
     }
 }
