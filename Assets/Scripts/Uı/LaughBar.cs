@@ -6,6 +6,7 @@ using DG.Tweening;
 public class LaughBar : MonoBehaviour
 {
     public static float laughLevel = 0;//kullanacaginiz degisken
+    public GameEvent gameEvent;
 
     float value;//takip eden bar scale y degeri
     void Update()
@@ -34,6 +35,7 @@ public class LaughBar : MonoBehaviour
         if (laughLevel >= 100f)
         {
             laughLevel = 100f;
+            gameEvent.Raise();
         }
         //0 dan kucuk olmasini engelle
         else if(laughLevel <= 0)

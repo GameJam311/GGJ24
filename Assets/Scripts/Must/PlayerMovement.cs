@@ -59,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (IsGrounded())
         {
-
             coyoteTimeCounter = coyoteTime;
         }
         else
@@ -120,6 +119,11 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
         }
+        //if(rb.velocity.y > 0)
+        //{
+        //    animator.SetTrigger("isJumping");
+        //    StartCoroutine(mýnakoyum());  
+        //}
         LaughControl();
     }
     void LaughControl()
@@ -204,6 +208,10 @@ public class PlayerMovement : MonoBehaviour
             inLightTime = 0f;
             criticScreen.SetActive(false);
         }
+    }
+    public void aymdead()
+    {
+        StartCoroutine (dieplayer());
     }
     IEnumerator dieplayer()
     {

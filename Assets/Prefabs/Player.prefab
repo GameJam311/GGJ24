@@ -89,7 +89,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 58772
+  m_InstanceId: 138360
   m_LocalBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.5, y: 0.5, z: 0}
@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 2136085330350049022}
   - component: {fileID: 4123405939342581610}
   - component: {fileID: 6767823364111632843}
+  - component: {fileID: 5964952666149784656}
   - component: {fileID: 8323243133590500317}
   - component: {fileID: 9087042606547687092}
   - component: {fileID: 6051177914368137345}
@@ -363,6 +364,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.49879837, y: 1.5335369}
   m_EdgeRadius: 0
+--- !u!114 &5964952666149784656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976329738024374135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40fd86e6705aaea4a8c28547301cbad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: 36ce3a68e5deda94fb77c96fd77cebbf, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8323243133590500317}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: aymdead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8323243133590500317
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ using static Unity.VisualScripting.Member;
 public class PushTraps : MonoBehaviour
 {
     public GameObject player;
+    public GameEvent canyok;
     Rigidbody2D rb;
     public float jumppower;
     void Start()
@@ -24,6 +25,7 @@ public class PushTraps : MonoBehaviour
         {
             Vector2 pushDirection = (player.transform.position - transform.position).normalized;
             rb.velocity = new Vector2(pushDirection.x * jumppower, pushDirection.y * jumppower);
+            canyok.Raise();
         }
     }
 }
