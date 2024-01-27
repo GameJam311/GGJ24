@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6093198347262304041}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.9993524, w: -0.0359833}
+  m_LocalRotation: {x: -0, y: -0, z: 0.99465525, w: -0.10325222}
   m_LocalPosition: {x: 0.02, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 37.35
   m_PointLightOuterAngle: 37.35
   m_PointLightInnerRadius: 0.9003835
-  m_PointLightOuterRadius: 8.587097
+  m_PointLightOuterRadius: 11.3884325
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -294,9 +294,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.036898106, y: 8.558313}
-      - {x: -2.7220027, y: 8.15214}
-      - {x: 0.057059348, y: 0.26656544}
-      - {x: 0.3042971, y: 0.35285723}
-      - {x: 2.7240996, y: 8.276012}
+    - - {x: -0.624117, y: 10.234973}
+      - {x: -3.367246, y: 9.892868}
+      - {x: 0.003516972, y: 0.02695167}
+      - {x: 0.05171136, y: 0.095854625}
+      - {x: 3.1281822, y: 9.188668}
   m_UseDelaunayMesh: 0

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Watch1 : MonoBehaviour
+public class enemyMove : MonoBehaviour
 {
 
     public float speed = 5f;
+    public int target=10;
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -14,7 +15,7 @@ public class Watch1 : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        endPos = new Vector3(startPos.x + 20f, startPos.y, startPos.z);
+        endPos = new Vector3(startPos.x + target, startPos.y, startPos.z);
 
 
     }
