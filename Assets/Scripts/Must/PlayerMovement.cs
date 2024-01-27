@@ -105,6 +105,14 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        if (IsGrounded() && horizontal != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else if(IsGrounded() && horizontal == 0)
+        {
+            animator.SetBool("isRunning", false);
+        }
         LaughControl();
     }
     void LaughControl()
