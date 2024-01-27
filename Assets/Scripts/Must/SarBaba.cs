@@ -19,7 +19,7 @@ public class SarBaba : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             sarrbaba();
-            if(framecount < 4)
+            if(framecount < 5)
             {
                 framecount++;
             } 
@@ -45,15 +45,10 @@ public class SarBaba : MonoBehaviour
                 Vector2 num3 = new Vector2(4.09f, -2.79f);
                 spriteList[3].gameObject.transform.DOMove(num3, 1).SetEase(Ease.OutQuart);
                 textMeshPro.text = "Press 'Space' for next scene";
-                StartCoroutine(nextscene());
+                break;
+            case 4:
+                this.gameObject.GetComponent<Buttons>().ChangeScene("GAMEPLAY");
                 break;
         }
-    }
-    IEnumerator nextscene()
-    {
-        yield return new WaitForSeconds(1);
-
-        this.gameObject.GetComponent<Buttons>().ChangeScene("GAMEPLAY");
-
     }
 }

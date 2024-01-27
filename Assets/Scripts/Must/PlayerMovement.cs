@@ -207,8 +207,9 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator dieplayer()
     {
+        amiCloawn = true;
         Instantiate(puff, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.7f);
-        SceneManager.LoadScene("YEDEK");
+        SceneManager.LoadScene("GAMEPLAY");
     }
 }
