@@ -10,6 +10,8 @@ public class MovingPlatform : MonoBehaviour
     public Transform endPos;
 
     private Transform target;
+
+    public bool doorDetectedOn = false;
     private void Start()
     {
         target = endPos;
@@ -36,6 +38,13 @@ public class MovingPlatform : MonoBehaviour
         else
         {
             target = endPos;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag.Equals("Door") && doorDetectedOn)
+        {
+            ChangeDirection();
         }
     }
 }

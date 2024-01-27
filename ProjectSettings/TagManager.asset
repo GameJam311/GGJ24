@@ -7,6 +7,7 @@ TagManager:
   - MovingPlatform
   - RotateTrap
   - Light
+  - Door
   layers:
   - Default
   - TransparentFX
