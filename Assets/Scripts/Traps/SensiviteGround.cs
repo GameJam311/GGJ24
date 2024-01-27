@@ -34,8 +34,9 @@ public class SensiviteGround : MonoBehaviour
     }
     IEnumerator StartBreak()
     {
+        audioSource.PlayOneShot(brokeSound, 1f);
         //10 kere sallanti komutu cagir
-        for(int i = 0 ; i < 10 ; i++)
+        for (int i = 0 ; i < 10 ; i++)
         {
             transform.DOShakePosition(1,0.04f);
         }
@@ -63,8 +64,7 @@ public class SensiviteGround : MonoBehaviour
         //karakter platforma bastiginda kirilma baslasin
         if (collision.gameObject.tag.Equals("Player"))
         {
-            StartCoroutine(StartBreak());
-            audioSource.PlayOneShot(brokeSound, 1f);
+            StartCoroutine(StartBreak());           
         }
     }
 }
