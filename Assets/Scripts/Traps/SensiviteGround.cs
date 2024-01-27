@@ -63,7 +63,7 @@ public class SensiviteGround : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             StartCoroutine(StartBreak());
-            //audioSource.PlayOneShot(brokeSound, 1f);
+            audioSource.PlayOneShot(brokeSound, 1f);
         }
     }
 }
