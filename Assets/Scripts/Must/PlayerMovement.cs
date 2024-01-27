@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isJumping;
     private bool isClown = false;
+    private bool amiCloawn = false;
 
     private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
@@ -25,17 +26,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Sprite king;
 
     AudioSource audioSource;
+    private Animator animator;
     public AudioClip[] footSteps;
     public float footStepSpeed;
     private void Start()
     {
+        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(FootSteps());
     }
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if(amiCloawn)
+        {
+            horizontal = 0;
+        }
+        else
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+        
 
         if (IsGrounded())
         {
@@ -47,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") )
         {
             jumpBufferCounter = jumpBufferTime;
         }
@@ -65,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(JumpCooldown());
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f && amiCloawn!)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 
@@ -76,11 +87,15 @@ public class PlayerMovement : MonoBehaviour
             if(isClown)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = clown;
+                animator.SetBool("clowning", true);
+                amiCloawn = true;
                 isClown = false;
             }
             else
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = king;
+                animator.SetBool("clowning", false);
+                amiCloawn = false;
                 isClown = true;
             }
         }
