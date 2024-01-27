@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Saffan.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainMenu.unity
+    guid: d1769514e191f08499afd0c8224c3de7
+  - enabled: 1
+    path: Assets/Scenes/StoryFirst.unity
+    guid: a922973f6f44dd94280e5b7d493392d4
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 31948edd4379c5e479baa3c1dab5381d
   m_configObjects: {}
