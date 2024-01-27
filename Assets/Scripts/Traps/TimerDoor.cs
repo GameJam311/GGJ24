@@ -7,8 +7,8 @@ public class TimerDoor : MonoBehaviour
 {
     public Transform startPoint;
     public Transform endPoint;
-    public float speed = 0f;
-    
+    public float speedUp = 0f;
+    public float speedDown = 0f;
 
     void Start()
     {
@@ -23,10 +23,10 @@ public class TimerDoor : MonoBehaviour
         Sequence sequence = DOTween.Sequence();
 
         //asagi hizlica in
-        sequence.Append(transform.DOMove(endPoint.position, speed).SetEase(Ease.InQuad));
+        sequence.Append(transform.DOMove(endPoint.position, speedDown).SetEase(Ease.InQuad));
 
         //yukari yavasca cik
-        sequence.Append(transform.DOMove(startPoint.position, speed*10).SetEase(Ease.OutQuad));
+        sequence.Append(transform.DOMove(startPoint.position, speedUp).SetEase(Ease.OutQuad));
 
         //sonsuz donguye al
         sequence.SetLoops(-1);
