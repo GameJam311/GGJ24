@@ -143,5 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf88fada5799d7e499a9eec498a4e0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brokeSound: {fileID: 8300000, guid: 83460af1c5890834faeae423040128b9, type: 3}
   normalSprite: {fileID: 21300000, guid: 070aab2b9e17a204da4fc912d2e07d90, type: 3}
   brokenSprite: {fileID: 21300000, guid: 070aab2b9e17a204da4fc912d2e07d90, type: 3}

@@ -5,8 +5,15 @@ using DG.Tweening;
 
 public class SensiviteGround : MonoBehaviour
 {
+    public AudioClip brokeSound;
+    AudioSource audioSource;
+
     public Sprite normalSprite;
     public Sprite brokenSprite;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnDisable()
     {
         //3 saniye sonra objeyi yeniden ac
@@ -41,11 +48,11 @@ public class SensiviteGround : MonoBehaviour
         //10 kere daha siddetli sallanti komutu cagir
         for (int i = 0 ; i < 10 ; i++)
         {
-            transform.DOShakePosition(2f, 0.06f);
+            transform.DOShakePosition(1f, 0.06f);
         }
 
         //bekle
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         //objeyi kapat
         this.gameObject.SetActive(false);
@@ -56,14 +63,7 @@ public class SensiviteGround : MonoBehaviour
         if (collision.gameObject.tag.Equals("Player"))
         {
             StartCoroutine(StartBreak());
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-        {
-            StopCoroutine(StartBreak());
-            StartRespawn();
+            audioSource.PlayOneShot(brokeSound, 1f);
         }
     }
 }
