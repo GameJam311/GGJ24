@@ -8,6 +8,7 @@ TagManager:
   - RotateTrap
   - Light
   - Door
+  - saw
   layers:
   - Default
   - TransparentFX
