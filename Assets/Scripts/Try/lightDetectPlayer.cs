@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class lightDetectPlayer : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
@@ -10,5 +10,6 @@ public class lightDetectPlayer : MonoBehaviour
         {
             Debug.Log("player degdi");
         }
+        
     }
 }
