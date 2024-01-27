@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 724476666926315749}
   - component: {fileID: 254719036402537881}
   - component: {fileID: 751614601977836253}
+  - component: {fileID: 6909512045246651045}
   m_Layer: 0
   m_Name: Platform
   m_TagString: MovingPlatform
@@ -124,8 +125,8 @@ Transform:
   m_GameObject: {fileID: 7881109306245618302}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 1.04, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4063247562047370650}
@@ -170,8 +171,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: 070aab2b9e17a204da4fc912d2e07d90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -214,18 +215,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05033493, y: -0.028741837}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.34375, y: 0.71875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.9900284, y: 0.52301407}
   m_EdgeRadius: 0
 --- !u!114 &751614601977836253
 MonoBehaviour:
@@ -243,3 +244,43 @@ MonoBehaviour:
   startPos: {fileID: 7827521499598672455}
   endPos: {fileID: 4557095857579245251}
   doorDetectedOn: 0
+--- !u!114 &6909512045246651045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881109306245618302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.93722534, y: -0.07871914, z: 0}
+  - {x: -1.0143204, y: 0.038517952, z: 0}
+  - {x: -1.0104828, y: 0.2283783, z: 0}
+  - {x: 0.9236145, y: 0.23676682, z: 0}
+  - {x: 0.92445374, y: 0.20489693, z: 0}
+  - {x: 0.9550705, y: 0.20348167, z: 0}
+  - {x: 0.95477295, y: 0.05071926, z: 0}
+  - {x: 0.92819214, y: 0.047169685, z: 0}
+  - {x: 0.9281845, y: -0.013356209, z: 0}
+  - {x: 0.8647003, y: -0.05297184, z: 0}
+  - {x: 0.8593445, y: -0.20027828, z: 0}
+  - {x: 0.8030777, y: -0.27046967, z: 0}
+  - {x: -0.8576126, y: -0.26414013, z: 0}
+  - {x: -0.9356384, y: -0.21330738, z: 0}
+  m_ShapePathHash: 919668733
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -637748
+  m_LocalBounds:
+    m_Center: {x: -0.029624939, y: -0.016851425, z: 0}
+    m_Extent: {x: 0.98469543, y: 0.25361824, z: 0}
