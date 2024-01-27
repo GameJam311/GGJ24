@@ -23,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip[] footSteps;
-    public AudioClip land;
     public float footStepSpeed;
     private void Start()
     {
@@ -37,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (IsGrounded())
         {
-            audioSource.PlayOneShot(land, 1f);
+
             coyoteTimeCounter = coyoteTime;
         }
         else
@@ -102,11 +101,12 @@ public class PlayerMovement : MonoBehaviour
     {
         while (true)
         {
-            if(IsGrounded() && !isJumping)
+            if (IsGrounded() && !isJumping && horizontal != 0)
             {
                 audioSource.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)], 1f);
-            }        
-            yield return new WaitForSeconds(footStepSpeed);
+
+                yield return new WaitForSeconds(footStepSpeed);
+            }
         }
     }
 }
