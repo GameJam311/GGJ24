@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
-    float nah;
 
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
@@ -142,19 +141,37 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Light"))
         {
-            Vector3 newScale = canbari.localScale;
-            newScale.y += Time.deltaTime;
-            canbari.localScale = newScale;
+            StartCoroutine(increaseit());
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Light"))
         {
-            float targetScaleY = 0.01f;
-            Vector3 newScale = canbari.localScale;
-            newScale.y = Mathf.Lerp(newScale.y, targetScaleY, Time.deltaTime);
-            canbari.localScale = newScale;
+           StartCoroutine(decreaseit());
         }
+    }
+    IEnumerator increaseit()
+    {
+        Debug.Log("çaðrýldým");
+        float targetScaleY = 1f;
+        if (canbari.localScale.y < targetScaleY)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Vector3 newScale = new Vector2 (canbari.localScale.x,canbari.localScale.y + 0.1f);
+            canbari.localScale = newScale;
+            StartCoroutine(increaseit());
+        }
+    }
+    IEnumerator decreaseit()
+    {
+        float targetScaleY = 0.01f;
+        if(canbari.localScale.y < targetScaleY)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Vector3 newScale = new Vector2(canbari.localScale.x, canbari.localScale.y - 0.1f);
+            canbari.localScale = newScale;
+            StartCoroutine(decreaseit());
+        }     
     }
 }
