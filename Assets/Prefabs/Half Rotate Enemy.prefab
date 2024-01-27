@@ -137,8 +137,8 @@ GameObject:
   - component: {fileID: 2132079548154772456}
   - component: {fileID: 3107469905472379255}
   - component: {fileID: 1226056094089221878}
-  - component: {fileID: 6788086151301133491}
   - component: {fileID: 5088234065034011759}
+  - component: {fileID: 7499032901386779199}
   m_Layer: 0
   m_Name: Light 2D (4)
   m_TagString: Light
@@ -238,8 +238,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!68 &6788086151301133491
-EdgeCollider2D:
+--- !u!114 &5088234065034011759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6093198347262304041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052ddae5e5df840459590e3429e39809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &7499032901386779199
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -271,28 +283,20 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.015985876, y: 0.1373899}
-  - {x: -2.2068448, y: 6.3311954}
-  - {x: -2.727149, y: 8.150824}
-  - {x: 0.02109158, y: 8.604202}
-  - {x: 2.704555, y: 8.118283}
-  - {x: 2.1186717, y: 6.2618976}
-  - {x: 0.08849716, y: 0.11586952}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &5088234065034011759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6093198347262304041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052ddae5e5df840459590e3429e39809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    m_Paths:
+    - - {x: -0.036898106, y: 8.558313}
+      - {x: -2.7220027, y: 8.15214}
+      - {x: 0.057059348, y: 0.26656544}
+      - {x: 0.3042971, y: 0.35285723}
+      - {x: 2.7240996, y: 8.276012}
+  m_UseDelaunayMesh: 0

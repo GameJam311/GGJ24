@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4810578864783606134}
   - component: {fileID: 3455769485466560976}
   - component: {fileID: 5230109107111991952}
-  - component: {fileID: 5539993462144721430}
   - component: {fileID: 4705834504427790255}
+  - component: {fileID: 2970710095632429313}
   m_Layer: 0
   m_Name: Light 2D (2)
   m_TagString: Light
@@ -112,8 +112,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!68 &5539993462144721430
-EdgeCollider2D:
+--- !u!114 &4705834504427790255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196295427583562269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052ddae5e5df840459590e3429e39809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &2970710095632429313
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -145,31 +157,24 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.015985876, y: 0.1373899}
-  - {x: -4.7118196, y: 4.94762}
-  - {x: -2.7156873, y: 6.275173}
-  - {x: 0.050393045, y: 6.846826}
-  - {x: 2.6759357, y: 6.313822}
-  - {x: 4.6858315, y: 4.901217}
-  - {x: 0.08849716, y: 0.11586952}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &4705834504427790255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196295427583562269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052ddae5e5df840459590e3429e39809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    m_Paths:
+    - - {x: -0.0013265721, y: 6.8036795}
+      - {x: -3.07108, y: 6.1078286}
+      - {x: -4.688404, y: 4.9882464}
+      - {x: -0.07812625, y: -0.09626961}
+      - {x: 4.638614, y: 5.046007}
+      - {x: 2.650802, y: 6.24571}
+  m_UseDelaunayMesh: 0
 --- !u!1 &4818396928087739801
 GameObject:
   m_ObjectHideFlags: 0

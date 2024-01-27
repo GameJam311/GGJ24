@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -29,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public AudioClip[] footSteps;
     public float footStepSpeed;
+
+    public bool inLight = false;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -38,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(amiCloawn)
+        if (amiCloawn)
         {
             horizontal = 0;
         }
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontal = Input.GetAxisRaw("Horizontal");
         }
-        
+
 
         if (IsGrounded())
         {
@@ -58,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump") )
+        if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
         }
@@ -82,9 +85,9 @@ public class PlayerMovement : MonoBehaviour
 
             coyoteTimeCounter = 0f;
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(isClown)
+            if (isClown)
             {
                 animator.SetBool("clowning", true);
                 amiCloawn = true;
@@ -103,8 +106,19 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        LaughControl();
     }
-
+    void LaughControl()
+    {
+        if (inLight)
+        {
+            LaughBar.laughLevel += Time.deltaTime * 50;
+        }
+        else
+        {
+            LaughBar.laughLevel -= Time.deltaTime * 50;
+        }
+    }
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
@@ -132,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (IsGrounded() && horizontal != 0)
             {
-                audioSource.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)], 1f);             
+                audioSource.PlayOneShot(footSteps[Random.Range(0, footSteps.Length)], 1f);
             }
             yield return new WaitForSeconds(footStepSpeed);
         }
@@ -141,37 +155,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Light"))
         {
-            StartCoroutine(increaseit());
+            inLight = true;   
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Light"))
         {
-           StartCoroutine(decreaseit());
+            inLight = false;
         }
-    }
-    IEnumerator increaseit()
-    {
-        Debug.Log("çaðrýldým");
-        float targetScaleY = 1f;
-        if (canbari.localScale.y < targetScaleY)
-        {
-            yield return new WaitForSeconds(0.1f);
-            Vector3 newScale = new Vector2 (canbari.localScale.x,canbari.localScale.y + 0.1f);
-            canbari.localScale = newScale;
-            StartCoroutine(increaseit());
-        }
-    }
-    IEnumerator decreaseit()
-    {
-        float targetScaleY = 0.01f;
-        if(canbari.localScale.y < targetScaleY)
-        {
-            yield return new WaitForSeconds(0.1f);
-            Vector3 newScale = new Vector2(canbari.localScale.x, canbari.localScale.y - 0.1f);
-            canbari.localScale = newScale;
-            StartCoroutine(decreaseit());
-        }     
     }
 }
