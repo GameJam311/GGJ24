@@ -8,6 +8,6 @@ public class DelayMusic : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.PlayDelayed(7f);
+        audioSource.PlayDelayed(6f);
     }
 }

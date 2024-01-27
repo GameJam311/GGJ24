@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class Buttons : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class Buttons : MonoBehaviour
     public void ButtonSound(AudioClip sound)
     {
         audioSource.PlayOneShot(sound, 1f);
+    }
+    public void ButtonEffectEnter(GameObject button)
+    {
+        button.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 0.1f);
+    }
+    public void ButtonEffectExit(GameObject button)
+    {
+        button.transform.DOScale(new Vector3(1f, 1f, 1f), 0.1f);
     }
     public void ExitGame()
     {
