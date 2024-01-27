@@ -32,8 +32,12 @@ public class PlayerMovement : MonoBehaviour
     public float footStepSpeed;
 
     public bool inLight = false;
+    public float inLightTime = 0f;
+
+    public GameObject criticScreen;
     private void Start()
     {
+        criticScreen.SetActive(false);
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(FootSteps());
@@ -164,7 +168,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.CompareTag("Light"))
         {
-            inLight = true;   
+            inLight = true;
+            inLightTime += Time.deltaTime;
+
+            if (inLightTime >= 2f)
+            {
+                criticScreen.SetActive(true);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -172,6 +182,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.CompareTag("Light"))
         {
             inLight = false;
+            inLightTime = 0f;
+            criticScreen.SetActive(false);
         }
     }
 }
