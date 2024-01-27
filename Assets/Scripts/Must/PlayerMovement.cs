@@ -2,7 +2,9 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -187,6 +189,10 @@ public class PlayerMovement : MonoBehaviour
             if (inLightTime >= 0.5f)
             {
                 criticScreen.SetActive(true);
+                if (inLightTime >= 2.5f)
+                {
+                    StartCoroutine(dieplayer());
+                }
             }
         }
     }
@@ -198,5 +204,11 @@ public class PlayerMovement : MonoBehaviour
             inLightTime = 0f;
             criticScreen.SetActive(false);
         }
+    }
+    IEnumerator dieplayer()
+    {
+        Instantiate(puff, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.7f);
+        SceneManager.LoadScene("YEDEK");
     }
 }
