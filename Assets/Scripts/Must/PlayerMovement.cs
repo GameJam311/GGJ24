@@ -171,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
             inLight = true;
             inLightTime += Time.deltaTime;
 
-            if (inLightTime >= 2f)
+            if (inLightTime >= 0.5f)
             {
                 criticScreen.SetActive(true);
             }

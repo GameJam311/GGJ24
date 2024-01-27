@@ -52,5 +52,6 @@ public class SarBaba : MonoBehaviour
     IEnumerator nextscene()
     {
         yield return new WaitForSeconds(1);
+
     }
 }
