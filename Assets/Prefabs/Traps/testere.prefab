@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6625285707081491581}
   - component: {fileID: 7207629850287954627}
   - component: {fileID: 5488130889217989671}
+  - component: {fileID: 5475048586305484293}
   m_Layer: 0
   m_Name: testere
   m_TagString: RotateTrap
@@ -157,3 +158,40 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5475048586305484293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039017095865957425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 1
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.40465355, y: -0.28958416, z: 0}
+  - {x: -0.5001869, y: -0.07074165, z: 0}
+  - {x: -0.49537086, y: 0.17972755, z: 0}
+  - {x: -0.3521843, y: 0.3830824, z: 0}
+  - {x: -0.066682816, y: 0.51689816, z: 0}
+  - {x: 0.23677254, y: 0.44464874, z: 0}
+  - {x: 0.42620277, y: 0.22363281, z: 0}
+  - {x: 0.47278976, y: -0.094825745, z: 0}
+  - {x: 0.38127327, y: -0.27786064, z: 0}
+  - {x: 0.19487572, y: -0.45605946, z: 0}
+  - {x: -0.23045158, y: -0.4368124, z: 0}
+  m_ShapePathHash: 545313431
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -51850
+  m_LocalBounds:
+    m_Center: {x: -0.013698578, y: 0.03041935, z: 0}
+    m_Extent: {x: 0.48648834, y: 0.4864788, z: 0}
