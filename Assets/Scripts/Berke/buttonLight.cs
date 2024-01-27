@@ -7,6 +7,7 @@ public class buttonLight : MonoBehaviour
     public GameObject lightObject; // Isik objesi
     public float time = 3f;
     private bool isLightDisactive = false;
+    [SerializeField] Sprite sprite;
 
     private void Update()
     {
@@ -34,8 +35,8 @@ public class buttonLight : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && !isLightDisactive)
         {
-            print("player degdi");
             lightActive();
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
         }
     }
 }
