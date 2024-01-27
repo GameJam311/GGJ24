@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class LaughBar : MonoBehaviour
 {
-    public float laughLevel = 0;//kullanacaginiz degisken
+    public static float laughLevel = 0;//kullanacaginiz degisken
 
     public GameObject valueBar;//takip eden bar
 

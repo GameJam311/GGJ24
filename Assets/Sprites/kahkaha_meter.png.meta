@@ -113,10 +113,10 @@ TextureImporter:
       name: kahkaha_meter_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 152.5
-        height: 182
+        x: 61
+        y: 49
+        width: 17
+        height: 123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: kahkaha_meter_1
       rect:
         serializedVersion: 2
-        x: 152
-        y: 0
-        width: 152.5
-        height: 182
+        x: 237
+        y: 53
+        width: 9
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,6 +147,27 @@ TextureImporter:
       bones: []
       spriteID: ecc59155322d9ba4891c7a337ef3c734
       internalID: 1840396754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kahkaha_meter_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 30
+        width: 127
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09bd86bc2d85a64faa58bd34c54f5d1
+      internalID: -486841774
       vertices: []
       indices: 
       edges: []
@@ -164,6 +185,7 @@ TextureImporter:
     nameFileIdTable:
       kahkaha_meter_0: -1182131313
       kahkaha_meter_1: 1840396754
+      kahkaha_meter_2: -486841774
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
+    float nah;
 
     private float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
@@ -22,8 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Sprite clown;
-    [SerializeField] private Sprite king;
+    [SerializeField] private Transform canbari;
 
     AudioSource audioSource;
     private Animator animator;
@@ -86,14 +87,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if(isClown)
             {
-                this.gameObject.GetComponent<SpriteRenderer>().sprite = clown;
                 animator.SetBool("clowning", true);
                 amiCloawn = true;
                 isClown = false;
             }
             else
             {
-                this.gameObject.GetComponent<SpriteRenderer>().sprite = king;
                 animator.SetBool("clowning", false);
                 amiCloawn = false;
                 isClown = true;
@@ -139,11 +138,23 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(footStepSpeed);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Light"))
         {
-            //kahkahameter kur
+            Vector3 newScale = canbari.localScale;
+            newScale.y += Time.deltaTime;
+            canbari.localScale = newScale;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Light"))
+        {
+            float targetScaleY = 0.01f;
+            Vector3 newScale = canbari.localScale;
+            newScale.y = Mathf.Lerp(newScale.y, targetScaleY, Time.deltaTime);
+            canbari.localScale = newScale;
         }
     }
 }
