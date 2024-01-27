@@ -9,7 +9,7 @@ public class SarBaba : MonoBehaviour
     public List<GameObject> spriteList = new List<GameObject>();
     public TextMeshProUGUI textMeshPro;
     int framecount = 0;
-
+    
     private void Start()
     {
         textMeshPro.gameObject.transform.DOScale(1.5f,1).SetLoops(-1,LoopType.Yoyo);
@@ -52,6 +52,8 @@ public class SarBaba : MonoBehaviour
     IEnumerator nextscene()
     {
         yield return new WaitForSeconds(1);
+
+        this.gameObject.GetComponent<Buttons>().ChangeScene("GAMEPLAY");
 
     }
 }
