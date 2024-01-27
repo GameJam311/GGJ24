@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Sprite clown;
+    [SerializeField] private Sprite king;
 
     AudioSource audioSource;
     public AudioClip[] footSteps;
@@ -73,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if(isClown)
             {
-                //kral ol
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = clown;
                 isClown = false;
             }
             else
             {
-                //kutu ol
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = king;
                 isClown = true;
             }
         }
