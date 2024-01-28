@@ -24,16 +24,24 @@ public class PushTraps : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Transform playerTransform = collision.transform;
+            float originalX = playerTransform.position.x;
             if (!PlayerMovement.isFacingRight)
             {
-                playerTransform.DOMoveX(playerTransform.position.x + playerTransform.position.x / 2 * 0.4f, 0.5f); //saga teptir
+                playerTransform.DOMoveX(originalX + originalX / 2 * 0.4f, 0.5f); // Saða tepme
             }
             else
             {
-                playerTransform.DOMoveX(playerTransform.position.x - playerTransform.position.x / 2 * 0.4f, 0.5f);//sola teptir
+                playerTransform.DOMoveX(originalX - originalX / 2 * 0.4f, 0.5f); // Sola tepme
             }
-            
+
             canyok.Raise();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Transform playerTransform = collision.transform;
         }
     }
 }
