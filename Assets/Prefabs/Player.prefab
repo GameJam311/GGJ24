@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9202047769514572161}
-  m_Layer: 6
-  m_Name: Detection
+  - component: {fileID: 5364518921352415438}
+  m_Layer: 0
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,12 +26,47 @@ Transform:
   m_GameObject: {fileID: 2924478738812447203}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.98, z: 0}
+  m_LocalPosition: {x: 0.081, y: -1.025, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8381779371276664943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &5364518921352415438
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2924478738812447203}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &3794664043711879740
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +77,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3025455190133406596}
   - component: {fileID: 4450381931618395767}
-  m_Layer: 6
+  - component: {fileID: 3647313863155742544}
+  m_Layer: 0
   m_Name: ShadowMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,16 +120,47 @@ MonoBehaviour:
   m_SelfShadows: 1
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  m_ShapePathHash: 0
+  - {x: -0.52750325, y: -0.8025361, z: 0}
+  - {x: -0.52421427, y: -0.5982631, z: 0}
+  - {x: -0.37324202, y: -0.55159897, z: 0}
+  - {x: -0.39470875, y: -0.20468026, z: 0}
+  - {x: -0.38472843, y: -0.03888786, z: 0}
+  - {x: -0.09128785, y: 0.18833017, z: 0}
+  - {x: -0.07113004, y: 0.458201, z: 0}
+  - {x: -0.009453297, y: 0.46024, z: 0}
+  - {x: 0.10119653, y: 0.5315975, z: 0}
+  - {x: 0.19023836, y: 0.4689247, z: 0}
+  - {x: 0.19284022, y: 0.18113798, z: 0}
+  - {x: 0.19088292, y: 0.019178987, z: 0}
+  - {x: 0.22584414, y: -0.22040981, z: 0}
+  - {x: 0.24234629, y: -0.3744282, z: 0}
+  - {x: 0.24768436, y: -0.70790523, z: 0}
+  - {x: 0.16951668, y: -0.780206, z: 0}
+  - {x: 0.0997684, y: -0.86723334, z: 0}
+  - {x: 0.08297992, y: -0.9581658, z: 0}
+  - {x: 0.14599884, y: -1.0319953, z: 0}
+  - {x: -0.02829194, y: -1.028254, z: 0}
+  - {x: -0.018161416, y: -0.8040522, z: 0}
+  - {x: -0.114403605, y: -0.8287286, z: 0}
+  m_ShapePathHash: -56124685
   m_Mesh: {fileID: 0}
-  m_InstanceId: 50326
+  m_InstanceId: -43360
   m_LocalBounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.5, y: 0.5, z: 0}
+    m_Center: {x: -0.13990945, y: -0.2501989, z: 0}
+    m_Extent: {x: 0.3875938, y: 0.7817964, z: 0}
+--- !u!114 &3647313863155742544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3794664043711879740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3d618f942b5f314883b8ee67ade2f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteTransform: {fileID: 8381779371276664943}
 --- !u!1 &4545179486902458727
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +172,7 @@ GameObject:
   - component: {fileID: 2051103935914925691}
   - component: {fileID: 4281070643603382458}
   - component: {fileID: 5866233654643326653}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Critic Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +283,7 @@ GameObject:
   - component: {fileID: 8323243133590500317}
   - component: {fileID: 9087042606547687092}
   - component: {fileID: 6051177914368137345}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -307,7 +375,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -317,7 +385,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &6767823364111632843
 BoxCollider2D:
