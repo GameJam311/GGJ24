@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerrecoil: {fileID: 11400000, guid: 5469926aab5c19d47885c44cebb0f0cb, type: 2}
   canyok: {fileID: 11400000, guid: 442ffbc569ecc654c972c46585ea3501, type: 2}
   jumppower: 50
 --- !u!114 &1140267094360611328

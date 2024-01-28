@@ -8,7 +8,6 @@ using static Unity.VisualScripting.Member;
 public class PushTraps : MonoBehaviour
 {
     public GameObject player;
-    public GameEvent playerrecoil;
     public GameEvent canyok;
     Rigidbody2D rb;
     public float jumppower;
@@ -24,9 +23,16 @@ public class PushTraps : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerrecoil.Raise();
-            Vector2 pushDirection = (player.transform.position - transform.position).normalized;
-            //rb.velocity = new Vector2(pushDirection.x * jumppower, pushDirection.y * jumppower);
+            Transform playerTransform = collision.transform;
+            if (!PlayerMovement.isFacingRight)
+            {
+                playerTransform.DOMoveX(playerTransform.position.x + playerTransform.position.x / 2 * 0.4f, 0.5f); //saga teptir
+            }
+            else
+            {
+                playerTransform.DOMoveX(playerTransform.position.x - playerTransform.position.x / 2 * 0.4f, 0.5f);//sola teptir
+            }
+            
             canyok.Raise();
         }
     }

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 20f;
-    private bool isFacingRight = true;
+    public static bool isFacingRight = true;
 
     private bool isJumping;
     private bool isClown = false;
@@ -242,20 +242,5 @@ public class PlayerMovement : MonoBehaviour
         this.gameObject.SetActive(false);
         SceneManager.LoadScene("GAMEPLAY");
         
-    }
-    public void lowRecoil()//düþük geri tepme
-    {
-        print("sagdan geri tepti");
-        float backwardForceMultiplier = 5f;
-        Vector2 backwardVelocity = -transform.right * backwardForceMultiplier;
-        rb.velocity = backwardVelocity;
-
-        if (isFacingRight == false)
-        {
-            print("soldan  geri tepti");
-            Flip();
-            backwardVelocity = transform.right * backwardForceMultiplier;
-            rb.velocity = backwardVelocity;
-        }
     }
 }
