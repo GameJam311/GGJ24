@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isJumping;
     private bool isClown = false;
+    private bool raised = false;
     private bool amiCloawn = false;
 
     private float coyoteTime = 0.2f;
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (amiCloawn)
+        if (amiCloawn || raised)
         {
             horizontal = 0;
         }
@@ -127,22 +128,28 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
         }
-        //if(rb.velocity.y > 0)
-        //{
-        //    animator.SetTrigger("isJumping");
-        //    StartCoroutine(mýnakoyum());  
-        //}
         LaughControl();
     }
     void LaughControl()
     {
-        if (amiCloawn )
+        if (amiCloawn && raised)
         {
             LaughBar.laughLevel += Time.deltaTime * 20;
         }
         else
         {
             LaughBar.laughLevel -= Time.deltaTime * 50;
+        }
+    }
+    public void changeMove()
+    {
+        if(raised)
+        {
+            raised = false;
+        }
+        else
+        {
+            raised = true;
         }
     }
     private bool IsGrounded()

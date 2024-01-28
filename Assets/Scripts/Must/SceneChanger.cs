@@ -24,6 +24,11 @@ public class SceneChanger : MonoBehaviour
     }
     IEnumerator loadScene()
     {
+        int sceneBuild = SceneManager.GetActiveScene().buildIndex;
+        if(sceneBuild == 1 )
+        {
+            PlayerPrefs.SetInt("trans", 1);
+        }
         animator.SetTrigger("End");
         yield return new WaitForSeconds(1);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
