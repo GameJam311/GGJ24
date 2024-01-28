@@ -86,9 +86,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && amiCloawn!)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            //coyoteTimeCounter = 0f;
+            //rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            coyoteTimeCounter = 0f;
         }
         if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0f)
         {
