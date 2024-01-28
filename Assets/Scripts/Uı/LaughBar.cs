@@ -9,10 +9,35 @@ public class LaughBar : MonoBehaviour
     public GameEvent gameEvent;
 
     float value;//takip eden bar scale y degeri
+    AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
         LaughBorder();
-        LaughBarControl();       
+        LaughBarControl();
+        LaughSounds();
+    }
+    void LaughSounds()
+    {       
+        if (laughLevel < 25)
+        {
+            audioSource.pitch = 1f; 
+        }
+        else if (laughLevel < 50)
+        {
+            audioSource.pitch = 0.8f;
+        }
+        else if (laughLevel < 75)
+        {
+            audioSource.pitch = 0.6f;
+        }
+        else if (laughLevel < 100)
+        {
+            audioSource.pitch = 0.4f;
+        }
     }
     void LaughBarControl()
     {

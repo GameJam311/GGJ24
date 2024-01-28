@@ -9,15 +9,19 @@ public class SarBaba : MonoBehaviour
     public List<GameObject> spriteList = new List<GameObject>();
     public TextMeshProUGUI textMeshPro;
     int framecount = 0;
-    
+
+    public AudioClip land;
+    AudioSource audioSource;
     private void Start()
     {
         textMeshPro.gameObject.transform.DOScale(1.5f,1).SetLoops(-1,LoopType.Yoyo);
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            audioSource.PlayOneShot(land, 1f);
             sarrbaba();
             if(framecount < 5)
             {
