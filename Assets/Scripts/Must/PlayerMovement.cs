@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void LaughControl()
     {
-        if (amiCloawn && raised)
+        if (amiCloawn)
         {
             LaughBar.laughLevel += Time.deltaTime * 20;
         }

@@ -16,7 +16,7 @@ public class PushTraps : MonoBehaviour
         rb = player.GetComponent<Rigidbody2D>();
         if(this.tag == "RotateTrap")
         {
-            this.transform.DORotate(new Vector3(0, 0, 180), 1, RotateMode.FastBeyond360).SetLoops(-1).SetEase(Ease.Linear);
+            this.transform.DORotate(new Vector3(0, 0, 360), 1).SetLoops(-1).SetEase(Ease.Linear);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
