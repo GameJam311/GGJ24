@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GAMEPLAY.unity
     guid: bd85352f8bde11b4d8eb9d9098146de9
   - enabled: 1
+    path: Assets/Scenes/LastStory.unity
+    guid: defc21a91f6b56441b73ce4a01304500
+  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 31948edd4379c5e479baa3c1dab5381d
   m_configObjects: {}

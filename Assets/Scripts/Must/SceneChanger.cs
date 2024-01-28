@@ -24,10 +24,19 @@ public class SceneChanger : MonoBehaviour
     }
     IEnumerator loadScene()
     {
+        Time.timeScale = 1.0f;
         int sceneBuild = SceneManager.GetActiveScene().buildIndex;
         if(sceneBuild == 1 )
         {
             PlayerPrefs.SetInt("trans", 1);
+        }
+        else if (sceneBuild == 4 )
+        {
+            animator.SetTrigger("End");
+            yield return new WaitForSeconds(1);
+            SceneManager.LoadSceneAsync(0);
+            animator.SetTrigger("Start");
+            yield break;
         }
         animator.SetTrigger("End");
         yield return new WaitForSeconds(1);
