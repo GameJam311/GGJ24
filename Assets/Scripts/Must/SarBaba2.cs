@@ -12,7 +12,9 @@ public class SarBaba2 : MonoBehaviour
     public GameObject cloawn;
 
     public AudioClip land;
+    public AudioClip fnaf;
     AudioSource audioSource;
+    public AudioSource mqgsaffan;
     private void Start()
     {
         textMeshPro.gameObject.transform.DOScale(1.5f, 1).SetLoops(-1, LoopType.Yoyo);
@@ -57,7 +59,15 @@ public class SarBaba2 : MonoBehaviour
                     spriteList[i].gameObject.SetActive(false);
                 }
                 cloawn.SetActive(true);
+                mqgsaffan.Stop();
+                audioSource.PlayOneShot(fnaf, 1);
+                StartCoroutine(gocredits());
                 break;
         }
+    }
+    IEnumerator gocredits()
+    {
+        yield return new WaitForSeconds(3);
+        SceneChanger.instance.NextLvl();
     }
 }
