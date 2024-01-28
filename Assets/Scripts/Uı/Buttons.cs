@@ -8,14 +8,11 @@ using DG.Tweening;
 public class Buttons : MonoBehaviour
 {
     AudioSource audioSource;
+    public GameObject panel;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-    }
-    public void ChangeScene(string scene)
-    {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(scene);
+        StartCoroutine(panelcontrol());
     }
     public void ButtonSound(AudioClip sound)
     {
@@ -32,5 +29,10 @@ public class Buttons : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    IEnumerator panelcontrol()
+    {
+        yield return new WaitForSeconds(1);
+        panel.SetActive(false);
     }
 }

@@ -51,7 +51,7 @@ public class SarBaba : MonoBehaviour
                 textMeshPro.text = "Press 'Space' for next scene";
                 break;
             case 4:
-                this.gameObject.GetComponent<Buttons>().ChangeScene("GAMEPLAY");
+                SceneChanger.instance.NextLvl();
                 break;
         }
     }
