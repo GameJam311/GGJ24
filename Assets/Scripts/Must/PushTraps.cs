@@ -27,6 +27,9 @@ public class PushTraps : MonoBehaviour
             Transform playerTransform = collision.transform;
             float originalX = playerTransform.position.x;
 
+            if (tween != null)
+                tween?.Kill();
+            tween.Play();
             if (!PlayerMovement.isFacingRight)
             {
                 tween = playerTransform.DOMoveX(originalX + originalX / 2 * 0.4f, 0.5f); // Saða tepme
@@ -35,9 +38,7 @@ public class PushTraps : MonoBehaviour
             {
                 tween = playerTransform.DOMoveX(originalX - originalX / 2 * 0.4f, 0.5f); // Sola tepme
             }
-            if (tween != null)
-                tween?.Kill();
-            tween.Play();
+            
 
             canyok.Raise();
 
