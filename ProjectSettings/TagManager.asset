@@ -9,6 +9,7 @@ TagManager:
   - Light
   - Door
   - saw
+  - GroundCheck
   layers:
   - Default
   - TransparentFX

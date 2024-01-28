@@ -41,10 +41,12 @@ public class PlayerMovement : MonoBehaviour
     public GameObject criticScreen;
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         criticScreen.SetActive(false);
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(FootSteps());
+        groundCheck = transform.Find("GroundCheck");
     }
 
     void Update()
@@ -66,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpBufferCounter = jumpBufferTime;
         }
@@ -82,10 +84,15 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(JumpCooldown());
         }
 
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f && amiCloawn!)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && amiCloawn!)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            //coyoteTimeCounter = 0f;
+        }
+        if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            coyoteTimeCounter = 0f;
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
