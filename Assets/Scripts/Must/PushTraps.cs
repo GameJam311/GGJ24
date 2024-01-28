@@ -11,6 +11,7 @@ public class PushTraps : MonoBehaviour
     public GameEvent canyok;
     Rigidbody2D rb;
     public float jumppower;
+    Tween tween;
     void Start()
     {
         rb = player.GetComponent<Rigidbody2D>();
@@ -28,12 +29,15 @@ public class PushTraps : MonoBehaviour
 
             if (!PlayerMovement.isFacingRight)
             {
-                playerTransform.DOMoveX(originalX + originalX / 2 * 0.4f, 0.5f); // Saða tepme
+                tween = playerTransform.DOMoveX(originalX + originalX / 2 * 0.4f, 0.5f); // Saða tepme
             }
             else
             {
-                playerTransform.DOMoveX(originalX - originalX / 2 * 0.4f, 0.5f); // Sola tepme
+                tween = playerTransform.DOMoveX(originalX - originalX / 2 * 0.4f, 0.5f); // Sola tepme
             }
+            if (tween != null)
+                tween?.Kill();
+            tween.Play();
 
             canyok.Raise();
 
