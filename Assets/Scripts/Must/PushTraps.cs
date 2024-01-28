@@ -26,22 +26,7 @@ public class PushTraps : MonoBehaviour
         {
             Transform playerTransform = collision.transform;
             float originalX = playerTransform.position.x;
-
-            if (tween != null)
-                tween?.Kill();
-            tween.Play();
-            if (!PlayerMovement.isFacingRight)
-            {
-                tween = playerTransform.DOMoveX(originalX + originalX / 2 * 0.4f, 0.5f); // Saða tepme
-            }
-            else
-            {
-                tween = playerTransform.DOMoveX(originalX - originalX / 2 * 0.4f, 0.5f); // Sola tepme
-            }
-            
-
             canyok.Raise();
-
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

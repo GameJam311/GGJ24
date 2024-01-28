@@ -35,4 +35,8 @@ public class Buttons : MonoBehaviour
         yield return new WaitForSeconds(1);
         panel.SetActive(false);
     }
+    public void ChangeScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }
