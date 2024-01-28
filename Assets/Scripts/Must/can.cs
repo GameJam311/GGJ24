@@ -14,13 +14,14 @@ public class can : MonoBehaviour
     {
         if(cancount >= 2)
         {
+            objects[cancount].gameObject.SetActive(false);
             gameEvent.Raise();
         }
         else
         {
             objects[cancount].gameObject.SetActive(false);
             cancount++;
-            kamera.DOShakePosition(0.3f, 3.5f, 5, 60).SetEase(Ease.InOutBounce);
+            kamera.DOShakePosition(0.2f, 3.5f, 5, 90).SetEase(Ease.InOutBounce);
         } 
     }
 }

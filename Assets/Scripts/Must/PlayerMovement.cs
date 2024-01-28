@@ -90,18 +90,20 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             audioSource.PlayOneShot(changeSound, 1f);
-            if (isClown)
+            if (!amiCloawn)
             {
-                animator.SetBool("clowning", true);
+                
                 amiCloawn = true;
                 isClown = false;
+                animator.SetBool("clowning", true);
                 Instantiate(puff,transform.position,Quaternion.identity);
             }
             else
             {
-                animator.SetBool("clowning", false);
+                
                 amiCloawn = false;
                 isClown = true;
+                animator.SetBool("clowning", false);
                 Instantiate(puff, transform.position, Quaternion.identity);
             }
         }
@@ -189,15 +191,21 @@ public class PlayerMovement : MonoBehaviour
         {
             inLight = true;
             inLightTime += Time.deltaTime;
-
-            if (inLightTime >= 0.5f)
-            {
-                criticScreen.SetActive(true);
-                if (inLightTime >= 2.5f)
+            if (!amiCloawn) {
+                if (inLightTime >= 0.5f)
                 {
-                    StartCoroutine(dieplayer());
+                    criticScreen.SetActive(true);
+                    if (inLightTime >= 2.5f)
+                    {
+                        StartCoroutine(dieplayer());
+                    }
                 }
             }
+            else {
+                inLightTime = 0f;
+                criticScreen.SetActive(false);
+            }
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -218,6 +226,8 @@ public class PlayerMovement : MonoBehaviour
         amiCloawn = true;
         Instantiate(puff, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.7f);
+        this.gameObject.SetActive(false);
         SceneManager.LoadScene("GAMEPLAY");
+        
     }
 }

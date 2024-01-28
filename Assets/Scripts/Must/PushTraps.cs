@@ -24,7 +24,7 @@ public class PushTraps : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Vector2 pushDirection = (player.transform.position - transform.position).normalized;
-            rb.velocity = new Vector2(pushDirection.x * jumppower, pushDirection.y * jumppower);
+            //rb.velocity = new Vector2(pushDirection.x * jumppower, pushDirection.y * jumppower);
             canyok.Raise();
         }
     }
