@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     public float inLightTime = 0f;
 
     public GameObject criticScreen;
+
+    private Vector3 initialPosition; // Added variable to store initial position
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(FootSteps());
         groundCheck = transform.Find("GroundCheck");
+
+        isFacingRight = true;
     }
 
     void Update()

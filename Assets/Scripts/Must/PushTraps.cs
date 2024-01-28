@@ -25,6 +25,7 @@ public class PushTraps : MonoBehaviour
         {
             Transform playerTransform = collision.transform;
             float originalX = playerTransform.position.x;
+
             if (!PlayerMovement.isFacingRight)
             {
                 playerTransform.DOMoveX(originalX + originalX / 2 * 0.4f, 0.5f); // Saða tepme
@@ -35,6 +36,7 @@ public class PushTraps : MonoBehaviour
             }
 
             canyok.Raise();
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
