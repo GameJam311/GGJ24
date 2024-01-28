@@ -243,4 +243,19 @@ public class PlayerMovement : MonoBehaviour
         SceneManager.LoadScene("GAMEPLAY");
         
     }
+    public void lowRecoil()//düþük geri tepme
+    {
+        print("sagdan geri tepti");
+        float backwardForceMultiplier = 5f;
+        Vector2 backwardVelocity = -transform.right * backwardForceMultiplier;
+        rb.velocity = backwardVelocity;
+
+        if (isFacingRight == false)
+        {
+            print("soldan  geri tepti");
+            Flip();
+            backwardVelocity = transform.right * backwardForceMultiplier;
+            rb.velocity = backwardVelocity;
+        }
+    }
 }
