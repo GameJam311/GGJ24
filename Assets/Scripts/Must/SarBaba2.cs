@@ -9,6 +9,7 @@ public class SarBaba2 : MonoBehaviour
     public List<GameObject> spriteList = new List<GameObject>();
     public TextMeshProUGUI textMeshPro;
     int framecount = 0;
+    public GameObject cloawn;
 
     public AudioClip land;
     AudioSource audioSource;
@@ -51,7 +52,11 @@ public class SarBaba2 : MonoBehaviour
                 textMeshPro.text = "Press 'Space' for next scene";
                 break;
             case 4:
-                SceneChanger.instance.NextLvl();
+                for (int i = 0; i < spriteList.Count; i++)
+                {
+                    spriteList[i].gameObject.SetActive(false);
+                }
+                cloawn.SetActive(true);
                 break;
         }
     }
