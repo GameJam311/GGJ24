@@ -12,17 +12,10 @@ public class PushTraps : MonoBehaviour
     Rigidbody2D rb;
     public float jumppower;
     Tween tween;
-
-
-    private Vector3 playerDirection;
-    public float goBackTime = 0.01f;
-    public float goBackSpeed = 1500f;
-    private float goBackStartTime = 0f;
-    private bool goBackActive = false;
+    public float horizontalRepelStrength, verticalRepelStrength = 20f;
 
     void Start()
     {
-        playerDirection = Vector3.right;
 
         rb = player.GetComponent<Rigidbody2D>();
         if (this.tag == "RotateTrap")
@@ -34,63 +27,24 @@ public class PushTraps : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //goBackActive = true;
-            //goBackStartTime = Time.time;
-            //playerDirection = -collision.transform.right;
+            Rigidbody2D playerRigidbody = collision.GetComponent<Rigidbody2D>();
 
-            //lowGoBack();
-            Transform playerTransform = collision.transform;
-            float originalX = playerTransform.position.x;
+            Vector2 repelForce;
 
-            if (tween != null)
-                tween?.Kill();
-            tween.Play();
-
-            if (!PlayerMovement.isFacingRight)
+            if (PlayerMovement.isFacingRight)
             {
-                playerTransform.DOMoveX(originalX - originalX / 2 * 0.2f, 0.1f); // Sola tepme
-                tween = playerTransform.DOMoveX(originalX + originalX / 2 * 0.1f, 0.1f);
+                // Oyuncu saða bakýyorsa, sola ve yukarýya kuvvet uygula
+                repelForce = new Vector2(-horizontalRepelStrength, verticalRepelStrength);
             }
-            else if(PlayerMovement.isFacingRight)
+            else
             {
-                playerTransform.DOMoveX(originalX - originalX / 2 * 0.2f, 0.1f); // Sola tepme
-                tween = playerTransform.DOMoveX(originalX - originalX / 2 * 0.1f, 0.1f); // Sola tepme
+                // Oyuncu sola bakýyorsa, saða ve yukarýya kuvvet uygula
+                repelForce = new Vector2(horizontalRepelStrength, verticalRepelStrength);
             }
-            
+            playerRigidbody.AddForce(repelForce, ForceMode2D.Impulse);
 
             canyok.Raise();
 
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            goBackActive = false;
-            Transform playerTransform = collision.transform;
-        }
-    }
-    //public void lowGoBack()
-    //{
-    //    if (goBackActive)
-    //    {
-    //        if (Time.time < goBackStartTime + goBackTime)
-    //        {
-    //            if (PlayerMovement.isFacingRight)
-    //            {
-    //                print("sola tepti");
-    //                // Sola tepme islemi
-    //                Vector3 newPos = player.transform.position + playerDirection * goBackSpeed * Time.deltaTime;
-    //                player.transform.position += newPos;
-    //            }
-    //            else if (!PlayerMovement.isFacingRight)
-    //            {
-    //                print("saga tepti");
-    //                // Sola tepme islemi
-    //                Vector3 newPos = player.transform.position - playerDirection * goBackSpeed * Time.deltaTime;
-    //                player.transform.position= newPos;
-    //            }
-    //        }
-    //    }
-    //}
 }
