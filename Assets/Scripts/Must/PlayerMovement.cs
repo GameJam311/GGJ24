@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
+    public static float speed = 8f;
     private float jumpingPower = 20f;
     public static bool isFacingRight = true;
 
