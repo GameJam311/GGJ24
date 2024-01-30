@@ -231,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
         Instantiate(puff, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.7f);
         this.gameObject.SetActive(false);
-        SceneManager.LoadScene("GAMEPLAY");
+        SceneManager.LoadScene("MustYedek");
 
     }
 }
