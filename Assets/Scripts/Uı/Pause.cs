@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     public GameObject pausePanel;
+    public GameEvent gameEvent;
     bool ispaused = false;
     void Update()
     {
@@ -13,13 +14,13 @@ public class Pause : MonoBehaviour
             if (!ispaused)
             {
                 pausePanel.SetActive(true);
-                Time.timeScale = 0;
+                gameEvent.Raise();
                 ispaused = true;
             }
             else
             {
                 pausePanel.SetActive(false);
-                Time.timeScale = 1;
+                gameEvent.Raise();
                 ispaused = false;
             }
         }

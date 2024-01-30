@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
                 amiCloawn = true;
                 isClown = false;
                 animator.SetBool("clowning", true);
-                Instantiate(puff,transform.position,Quaternion.identity);
+                Instantiate(puff, transform.position, Quaternion.identity);
             }
             else
             {
@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
         }
-        else if(IsGrounded() && horizontal == 0)
+        else if (IsGrounded() && horizontal == 0)
         {
             animator.SetBool("isRunning", false);
         }
@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void changeMove()
     {
-        if(raised)
+        if (raised)
         {
             raised = false;
         }
@@ -187,27 +187,14 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(footStepSpeed);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("MovingPlatform"))
-        {
-            //transform.SetParent(collision.transform);
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("MovingPlatform"))
-        {
-            //transform.SetParent(null);
-        }
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Light"))
         {
             inLight = true;
             inLightTime += Time.deltaTime;
-            if (!amiCloawn) {
+            if (!amiCloawn)
+            {
                 if (inLightTime >= 0.5f)
                 {
                     criticScreen.SetActive(true);
@@ -217,7 +204,8 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-            else {
+            else
+            {
                 inLightTime = 0f;
                 criticScreen.SetActive(false);
             }
@@ -235,15 +223,15 @@ public class PlayerMovement : MonoBehaviour
     }
     public void aymdead()
     {
-        StartCoroutine (dieplayer());
+        StartCoroutine(dieplayer());
     }
     IEnumerator dieplayer()
     {
-        //amiCloawn = true;
-        //Instantiate(puff, transform.position, Quaternion.identity);
+        amiCloawn = true;
+        Instantiate(puff, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.7f);
-        //this.gameObject.SetActive(false);
-        //SceneManager.LoadScene("GAMEPLAY");
-        
+        this.gameObject.SetActive(false);
+        SceneManager.LoadScene("GAMEPLAY");
+
     }
 }

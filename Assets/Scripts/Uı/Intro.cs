@@ -12,7 +12,7 @@ public class Intro : MonoBehaviour
     public GameObject lampSound;
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();      
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(StartIntro());
     }
     void ChangeColor(string hexColor)
@@ -37,7 +37,6 @@ public class Intro : MonoBehaviour
         lampSound.SetActive(false);
 
         yield return new WaitForSeconds(1f);
-
         Destroy(this.gameObject);
     }
 }
