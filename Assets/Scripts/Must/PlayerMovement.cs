@@ -40,8 +40,6 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject criticScreen;
 
-    private Vector3 initialPosition; // Added variable to store initial position
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -193,14 +191,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
-            transform.SetParent(collision.transform);
+            //transform.SetParent(collision.transform);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
-            transform.SetParent(null);
+            //transform.SetParent(null);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -241,11 +239,11 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator dieplayer()
     {
-        amiCloawn = true;
-        Instantiate(puff, transform.position, Quaternion.identity);
+        //amiCloawn = true;
+        //Instantiate(puff, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.7f);
-        this.gameObject.SetActive(false);
-        SceneManager.LoadScene("GAMEPLAY");
+        //this.gameObject.SetActive(false);
+        //SceneManager.LoadScene("GAMEPLAY");
         
     }
 }
