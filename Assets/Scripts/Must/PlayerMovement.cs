@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
             audioSource.PlayOneShot(changeSound, 1f);
             if (!amiCloawn)
             {
-                
+                groundCheck.transform.position = new Vector2(groundCheck.transform.position.x, groundCheck.transform.position.y + 0.221f);
                 amiCloawn = true;
                 isClown = false;
                 animator.SetBool("clowning", true);
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                
+                groundCheck.transform.position = new Vector2(groundCheck.transform.position.x, groundCheck.transform.position.y - 0.221f);
                 amiCloawn = false;
                 isClown = true;
                 animator.SetBool("clowning", false);
