@@ -12,7 +12,7 @@ public class can : MonoBehaviour
     public GameEvent gameEvent;
     public GameEvent durla;
     public Transform kamera;
-    public GameObject transtition;
+    //public GameObject transtition;
     public void cangg()
     {
         if(cancount >= 2)

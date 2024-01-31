@@ -5,23 +5,21 @@ using UnityEngine;
 
 public class showtext : MonoBehaviour
 {
-    public GameObject proxxxtext;
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        Debug.Log("OnCollisionEnter2D called with: " + collision.collider.name);
+        if (collision.collider.CompareTag("Player"))
         {
-            proxxxtext.SetActive(true);
-            proxxxtext.transform.DOScale(1.5f, 1).SetLoops(-1, LoopType.Yoyo);
-            Time.timeScale = 0;
+            collision.gameObject.transform.SetParent(this.transform);
         }
     }
-    private void Update()
+
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        Debug.Log("OnCollisionExit2D called with: " + collision.collider.name);
+        if (collision.collider.CompareTag("Player"))
         {
-            proxxxtext.SetActive(false);
-            Time.timeScale = 1;
-            this.gameObject.SetActive(false);
+            collision.gameObject.transform.SetParent(null);
         }
     }
 }

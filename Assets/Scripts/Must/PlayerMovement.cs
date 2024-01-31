@@ -119,7 +119,6 @@ public class PlayerMovement : MonoBehaviour
         }
         Flip();
     }
-
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
@@ -187,6 +186,21 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(footStepSpeed);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(collision.transform);
+            Debug.Log("ssss");
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(null);
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Light"))
@@ -232,6 +246,5 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         this.gameObject.SetActive(false);
         SceneManager.LoadScene("GAMEPLAY");
-
     }
 }
