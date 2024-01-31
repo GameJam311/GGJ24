@@ -52,6 +52,7 @@ public class SarBaba : MonoBehaviour
                 textMeshPro.text = "Press 'Space' for next scene";
                 break;
             case 4:
+                PlayerPrefs.SetInt("ispassed", 1);
                 SceneChanger.instance.NextLvl();
                 break;
         }
