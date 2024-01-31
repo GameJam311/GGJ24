@@ -7,7 +7,7 @@ public class enemyMove : MonoBehaviour
 {
 
     public float speed = 5f;
-    public int target=10;
+    public float target=10;
 
     private Vector3 startPos;
     private Vector3 endPos;
